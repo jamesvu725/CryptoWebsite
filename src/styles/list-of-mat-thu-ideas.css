@@ -1,0 +1,17 @@
+dt {
+  font-size: 1.5rem;
+}
+
+dd {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+dl {
+  margin: 1rem;
+  text-align: left;
+}
