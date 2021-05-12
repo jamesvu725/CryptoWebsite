@@ -8,13 +8,14 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/letter-to-number.js" async defer></script>
     <title>Letter to Number</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this website.</noscript>
-    <div class="nav">
-      <div class="header">
+    <div class="navbar">
+      <div class="home">
         <a href="../index.html">
           <img src="../images/tntt.png" alt="tntt logo" style="float:left; width:2.5rem; height:2.5rem; margin-right:1rem">
           THD M&#7853;t Th&#432;
@@ -26,9 +27,121 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>Letter to Number</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>Letter to Number</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>There are 26 letters in the alphabet. Each letter is assigned the number corresponding to its position in the alphabet. You substitute each letter in your message with the number.</p>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each letter in your message with the number in the cell next to it.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Letter</th>
+                <th>Number</th>
+              </tr>
+            </thead>
+            <tbody class="table-content"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each number in your message with the letter in the cell next to it.</p>
+          <p>Example:</p>
+          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Letter</th>
+                <th>Number</th>
+              </tr>
+            </thead>
+            <tbody class="table-content"></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below and click Submit. Make sure the message only contains letters and spaces, numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <button onclick="encrypt()" class="tool-button">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Make sure the message only contains numbers with spaces in between.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <p>Letter to number is a beginner friendly cryptogram for young kids or people who are new to cryptography. It is easy to encrypt and decrypt the message.</p>
+          <div class="pro-con">
+            <div id="pro">
+              <p>Pros:</p>
+              <ul>
+                <li>Beginner friendly</li>
+                <li>Easy to create</li>
+                <li>Good for young kids</li>
+              </ul>
+            </div>
+            <div id="con">
+              <p>Cons:</p>
+              <ul>
+                <li>Easy to solve</li>
+              </ul>
+            </div>
+          </div>
+          <p>Here is some creative ways to increase the difficulty of Letter to Number:</p>
+          <ul>
+            <li>Use it in conjunction with another alphabet based cryptogram and replace all the letters with numbers.
+              <ul>
+                <li>Example: Anagrams with Numbers</li>
+                <li>Original Message: The quick brown fox jumps over the lazy dog.</li>
+                <li>Encrypted Message: 8 5 20 / 11 3 21 9 17 / 18 2 15 14 23 / 24 15 6 / 10 13 16 19 21 / 18 22 5 15 / 5 8 20 / 1 26 25 12 / 15 7 4</li>
+              </ul>
+            </li>
+            <li>Use it in conjunction with another cryptogram by alternating cryptograms.
+              <ul>
+                <li>Example: Letter to Number and Reverse Alphabet</li>
+                <li>Original Message: The quick brown fox jumps over the lazy dog.</li>
+                <li>Encrypted Message: 20 S 5 / J 21 R 3 P / 2 I 15 D 14 / U 15 C / 10 F 13 K 19 / L 22 V 18 / G 8 V / 12 Z 26 B / 4 L 7 </li>
+              </ul>
+            </li>
+            <li>Use it to hide a fake message while using it with another cryptogram
+              <ul>
+                <li>Example: Letter to Number and Reverse Alphabet</li>
+                <li>Original Message: Real Secret</li>
+                <li>Fake Message: Fake Answer</li>
+                <li>Encrypted Message: 6I 1V 11Z 5O 1H 14V 19X 23I 5V 18G</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

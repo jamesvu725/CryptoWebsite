@@ -4,10 +4,11 @@ body {
   font-family: sans-serif;
   font-size: 100%;
   margin: 0;
+  padding: 0;
   text-align: center;
 }
 
-.nav {
+.navbar {
   background-color: #515151;
   overflow: hidden;
   position: fixed;
@@ -15,7 +16,7 @@ body {
   width: 100%;
 }
 
-.header a {
+.home a {
   color: white;
   display: block;
   float: left;
@@ -36,5 +37,5 @@ body {
 }
 
 .nav-links a:hover {
-  background-color: #313131;
+  background-color: #3B3B3B;
 }

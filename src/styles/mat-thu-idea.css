@@ -1,7 +1,93 @@
+header {
+  margin-top: 5rem;
+}
+
+main {
+  margin: 2rem;
+}
+
 h1 {
   font-size: 2.5rem;
 }
 
-.title {
-  margin-top: 5rem;
+p {
+  font-size: 1rem;
+  text-align: left;
+}
+
+section {
+  margin-bottom: 1rem;
+}
+
+table, th, td{
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+table {
+  margin-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th, td {
+  padding: 5px;
+}
+
+.collapsible {
+  background-color: #515151;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.active, .collapsible:hover {
+  background-color: #3B3B3B;
+}
+
+.collapsible:after {
+  color: white;
+  content: '\002B';
+  float: right;
+  font-weight: bold;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+
+.content {
+  background-color: #626262;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  transition: max-height 0.2s ease-out;
+}
+
+textarea {
+  height: 5rem;
+  resize: none;
+  width: 100%;
+}
+
+.tool-button {
+  margin-bottom: 1rem;
+}
+
+.pro-con {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.pro-con div{
+  width: 50%;
+}
+
+ul {
+  text-align: left;
 }
