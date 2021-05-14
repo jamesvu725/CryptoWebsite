@@ -1,12 +1,14 @@
 function fillTable() {
-  const table = document.getElementsByClassName('table-content');
-  for (let i = 0; i < table.length; ++i) {
-    for (let j = 26; j >= 1; --j) {
-      const row = table[i].insertRow(0);
-      const cell1 = row.insertCell(0);
-      const cell2 = row.insertCell(1);
-      cell1.innerHTML = String.fromCharCode(64 + j);
-      cell2.innerHTML = j;
+  const table1 = document.getElementsByClassName('table-row1');
+  const table2 = document.getElementsByClassName('table-row2');
+  for (let i = 0; i < table1.length; ++i) {
+    for (let j = 0; j <= 25; ++j) {
+      const row1 = table1[i];
+      const row2 = table2[i];
+      const cell1 = row1.insertCell(j + 1);
+      const cell2 = row2.insertCell(j + 1);
+      cell1.innerHTML = String.fromCharCode(65 + j);
+      cell2.innerHTML = j + 1;
     }
   }
 }

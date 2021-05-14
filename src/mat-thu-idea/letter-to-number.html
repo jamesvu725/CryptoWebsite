@@ -37,64 +37,6 @@
           <p>There are 26 letters in the alphabet. Each letter is assigned the number corresponding to its position in the alphabet. You substitute each letter in your message with the number.</p>
         </div>
       </section>
-      <section id="encrypt">
-        <button type="button" class="collapsible">How to Encrypt Your Message</button>
-        <div class="content">
-          <p>Using the table below, substitute each letter in your message with the number in the cell next to it.</p>
-          <p>Example:</p>
-          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
-          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Letter</th>
-                <th>Number</th>
-              </tr>
-            </thead>
-            <tbody class="table-content"></tbody>
-          </table>
-        </div>
-      </section>
-      <section id="decrypt">
-        <button type="button" class="collapsible">How to Decrypt Your Message</button>
-        <div class="content">
-          <p>Using the table below, substitute each number in your message with the letter in the cell next to it.</p>
-          <p>Example:</p>
-          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
-          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
-          <table>
-            <thead>
-              <tr>
-                <th>Letter</th>
-                <th>Number</th>
-              </tr>
-            </thead>
-            <tbody class="table-content"></tbody>
-          </table>
-        </div>
-      </section>
-      <section id="encrypt-tool">
-        <button type="button" class="collapsible">Encryption Tool</button>
-        <div class="content">
-          <p>Input the message you want to encrypt below and click Submit. Make sure the message only contains letters and spaces, numbers and punctuation will be ignored.</p>
-          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
-          <button onclick="encrypt()" class="tool-button">Submit</button>
-          <p>Your encrypted message will be outputted below.</p>
-          <textarea id="encrypt-text-output"></textarea>
-          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
-        </div>
-      </section>
-      <section id="decrypt-tool">
-        <button type="button" class="collapsible">Decryption Tool</button>
-        <div class="content">
-          <p>Input the message you want to decrypt below and click Submit. Make sure the message only contains numbers with spaces in between.</p>
-          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
-          <button onclick="decrypt()" class="tool-button">Submit</button>
-          <p>Your decrypted message will be outputted below.</p>
-          <textarea id="decrypt-text-output"></textarea>
-          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
-        </div>
-      </section>
       <section id="my-corner">
         <button type="button" class="collapsible">James's Corner</button>
         <div class="content">
@@ -140,6 +82,62 @@
               </ul>
             </li>
           </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each letter in your message with the number in the cell next to it.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Number</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each number in your message with the letter in the cell next to it.</p>
+          <p>Example:</p>
+          <p>Encrypted Message: 20 8 5 17 21 9 3 11 2 18 15 23 14 6 15 24 10 21 13 16 19 15 22 5 18 20 8 5 12 1 26 25 4 15 7</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Number</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below and click Submit. Make sure the message only contains letters and spaces, numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <button onclick="encrypt()" class="tool-button">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Make sure the message only contains numbers with spaces in between.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
         </div>
       </section>
     </main>
