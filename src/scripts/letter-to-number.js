@@ -16,7 +16,7 @@ fillTable();
 
 function encrypt() {
   const inputText = document.getElementById('encrypt-text').value;
-  const stripText = inputText.replace(/[0-9]/g, '').toUpperCase();
+  const stripText = inputText.toUpperCase().replace(/[^A-Z .]/g, '');
   let encryptedMessage = '';
   let charCode = 0;
   for (let i = 0; i < stripText.length; ++i) {
@@ -24,6 +24,8 @@ function encrypt() {
     if (charCode >= 65 && charCode <= 90) {
       encryptedMessage += charCode - 64;
       encryptedMessage += ' ';
+    } else if (stripText[i] === ' ') {
+      encryptedMessage += '/ ';
     }
   }
   document.getElementById('encrypt-text-output').innerHTML = encryptedMessage;
@@ -31,12 +33,15 @@ function encrypt() {
 
 function decrypt() {
   const inputText = document.getElementById('decrypt-text').value;
-  const stripText = inputText.toUpperCase().replace(/[A-Z]/g, '');
+  const stripText = inputText.toUpperCase().replace(/[^0-9 /]/g, '');
   const numArray = stripText.split(' ');
   let decryptedMessage = '';
   for (let i = 0; i < numArray.length; ++i) {
-    decryptedMessage += String.fromCharCode(64+parseInt(numArray[i], 10));
-    decryptedMessage += ' ';
+    if (numArray[i] != '/') {
+      decryptedMessage += String.fromCharCode(64+parseInt(numArray[i], 10));
+    } else {
+      decryptedMessage += ' ';
+    }
   }
   document.getElementById('decrypt-text-output').innerHTML = decryptedMessage;
 }
