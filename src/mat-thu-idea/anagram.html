@@ -8,7 +8,8 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/anagram.js" async defer></script>
     <title>Anagram</title>
   </head>
   <body>
@@ -26,9 +27,64 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>Anagram</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>Anagram</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>Anagram is shuffling around the letters in a word or phrase using all the original letters exactly once.</p>
+          <p>Example: A Gentleman => Elegant Man</p>
+          <p>Example: Silent => Listen</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>Easy to create if you just want to randomly shuffle</li>
+                <li>Can be fun for the solver if message is a fun phrase</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>Can easily use an anagram solver online to find each word</li>
+                <li>Easy to recognize word if word is short</li>
+                <li>Hard to make if you want to be witty and make a message using real words</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>May not be needed since anagrams are generally recognizable, but you can give if you want to</li>
+            <li>Solvers may take awhile to decode long words, so it is advised to give them the first and last letter of the original word</li>
+          </ul>
+          <p>Here is some creative ways to use Anagrams:</p>
+          <ul>
+            <li>Shuffle the letters in a way that you can create a meaningful short phrase
+              <ul>
+                <li>Example: William Shakespeare => I am a weakish speller</li>
+              </ul>
+            </li>
+            <li>Shuffle the letters in each word, but keep the first and last letter in the same position.
+              <ul>
+                <li>Example: Aoccdrnig to a rscheearch at Cmabrigde Uinervtisy, it deosn’t mttaer in waht oredr the ltteers in a wrod are, the olny iprmoetnt tihng is taht the frist and lsat ltteer be at the rghit pclae. The rset can be a toatl mses and you can sitll raed it wouthit porbelm. Tihs is bcuseae the huamn mnid deos not raed ervey lteter by istlef, but the wrod as a wlohe.</li>
+              </ul>
+            </li>
+            <li>Just be uncreative and scramble all the letters. CAUTION: If you do choose this method, it is recommended to only scramble the letters in each word and not the entire phrase.
+              <ul>
+                <li>Example: Do this => od itsh</li>
+                <li>Example: Not that => aott nht</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
