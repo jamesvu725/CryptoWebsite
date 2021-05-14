@@ -8,7 +8,8 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/reverse-alphabet.js" async defer></script>
     <title>Reverse Alphabet</title>
   </head>
   <body>
@@ -26,9 +27,123 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>Reverse Alphabet</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>Reverse Alphabet</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>Reverse Alphabet is a simple substitution cipher where you reverse the alphabet order and each letter in the alphabet is assigned a reversed alphabet letter in the same position. Example: A = Z, B = Y, etc.</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>Beginner friendly</li>
+                <li>Easy to create</li>
+                <li>Good for young kids</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>Easy to solve</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Generally unneeded for a simple cryptogram such as this one.</li>
+            <li>Avoid giving a hint such as <em>A = Z</em> since the solver can easily use their intuition to figure it out.</li>
+          </ul>
+          <p>Here is some creative ways to increase the difficulty of Reverse Alphabet:</p>
+          <ul>
+            <li>Create a double layered cryptogram by combining it with another cryptogram.
+              <ul>
+                <li>Example: Reverse Alphabet combined with Letter to Number</li>
+                <li>Original Message: The quick brown fox jumps over the lazy dog.</li>
+                <li>Encrypted Message: 7 19 22 / 10 6 18 24 16 / 25 9 12 4 13 / 21 12 3 / 17 6 14 11 8 / 12 5 22 9 / 7 19 22 / 15 26 1 2 / 23 12 20 </li>
+              </ul>
+            </li>
+            <li>Use it in conjunction with another cryptogram by alternating cryptograms.
+              <ul>
+                <li>Example: Letter to Number and Reverse Alphabet</li>
+                <li>Original Message: The quick brown fox jumps over the lazy dog.</li>
+                <li>Encrypted Message: 20 S 5 / J 21 R 3 P / 2 I 15 D 14 / U 15 C / 10 F 13 K 19 / L 22 V 18 / G 8 V / 12 Z 26 B / 4 L 7 </li>
+              </ul>
+            </li>
+            <li>Use it to hide a fake message while using it with another cryptogram
+              <ul>
+                <li>Example: Letter to Number and Reverse Alphabet</li>
+                <li>Original Message: Real Secret</li>
+                <li>Fake Message: Fake Answer</li>
+                <li>Encrypted Message: 6I 1V 11Z 5O 1H 14V 19X 23I 5V 18G</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each letter in your message with the letter in the cell below it.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: GSV JFRXP YILDM ULC QFNKH LEVI GSV OZAB WLT</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Reverse</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each letter in your message with the letter in the cell below it.</p>
+          <p>Example:</p>
+          <p>Encrypted Message: GSV JFRXP YILDM ULC QFNKH LEVI GSV OZAB WLT.</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Reverse</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <button onclick="encrypt()" class="tool-button">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
