@@ -80,14 +80,14 @@ textarea {
 
 .pro-con {
   display: flex;
-  flex-direction: row;
   text-align: left;
 }
 
-.pro-con div{
-  width: 50%;
+.col {
+  flex: 50%;
 }
 
 ul {
+  margin-bottom: 1rem;
   text-align: left;
 }

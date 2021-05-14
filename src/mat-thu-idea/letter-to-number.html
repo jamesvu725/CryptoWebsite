@@ -40,9 +40,8 @@
       <section id="my-corner">
         <button type="button" class="collapsible">James's Corner</button>
         <div class="content">
-          <p>Letter to number is a beginner friendly cryptogram for young kids or people who are new to cryptography. It is easy to encrypt and decrypt the message.</p>
           <div class="pro-con">
-            <div id="pro">
+            <div class="col">
               <p>Pros:</p>
               <ul>
                 <li>Beginner friendly</li>
@@ -50,13 +49,18 @@
                 <li>Good for young kids</li>
               </ul>
             </div>
-            <div id="con">
+            <div class="col">
               <p>Cons:</p>
               <ul>
                 <li>Easy to solve</li>
               </ul>
             </div>
           </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Generally unneeded for a simple cryptogram such as this one.</li>
+            <li>Avoid giving a hint such as <em>A = 1</em> since the solver can easily use their intuition to figure it out.</li>
+          </ul>
           <p>Here is some creative ways to increase the difficulty of Letter to Number:</p>
           <ul>
             <li>Use it in conjunction with another alphabet based cryptogram and replace all the letters with numbers.
@@ -121,7 +125,7 @@
       <section id="encrypt-tool">
         <button type="button" class="collapsible">Encryption Tool</button>
         <div class="content">
-          <p>Input the message you want to encrypt below and click Submit. Make sure the message only contains letters and spaces, numbers and punctuation will be ignored.</p>
+          <p>Input the message you want to encrypt below and click Submit. Please make sure the message only contains letters and spaces, numbers and punctuation will be ignored.</p>
           <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
           <button onclick="encrypt()" class="tool-button">Submit</button>
           <p>Your encrypted message will be outputted below.</p>
@@ -132,7 +136,7 @@
       <section id="decrypt-tool">
         <button type="button" class="collapsible">Decryption Tool</button>
         <div class="content">
-          <p>Input the message you want to decrypt below and click Submit. Make sure the message only contains numbers with spaces in between.</p>
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains numbers with spaces in between.</p>
           <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
           <button onclick="decrypt()" class="tool-button">Submit</button>
           <p>Your decrypted message will be outputted below.</p>
