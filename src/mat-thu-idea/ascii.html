@@ -8,7 +8,8 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/ascii.js" async defer></script>
     <title>ASCII</title>
   </head>
   <body>
@@ -26,9 +27,155 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>ASCII</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>ASCII</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>ASCII stands for American Standard Code for Information Interchange. ASCII code is the numerical representation of a character. For this cryptogram, every letter is substituted with its ASCII code.</p>
+          <p>Example: A = 65, a = 97</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>The solver doesn't need to know the ASCII table to solve it if they are given hints as a reference</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>May be difficult to understand</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Give at least 1 hint as a reference to know where the alphabet is</li>
+            <li>Give at least 2 hints as reference if both lowercase and uppercase is used in the solution</li>
+            <li>Give A = 65 or a = 97 if you want to make it easier for the solver</li>
+            <li>Give a random letter in the middle of the alphabet if you want it to be harder for the solver</li>
+          </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, look for your letter and then substitute it with the value below.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: 84 104 101 / 113 117 105 99 107 / 98 114 111 119 110 / 102 111 120 / 106 117 109 112 115 / 111 118 101 114 / 116 104 101 / 108 97 122 121 / 100 111 103</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>ASCII</th>
+            </tr>
+            <tr class="table-row3">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row4">
+              <th>ASCII</th>
+            </tr>
+          </table>
+          <img src="../images/ascii.png" alt="ASCII Table" style="background-color: white; height: auto; margin-bottom: 1rem; width: 50%;">
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message Without ASCII Table</button>
+        <div class="content">
+          <p>Assuming you have hints or know at least one of the key values, write down the alphabet in a list like the one shown below. The orientation of the table doesn't matter, just do whichever is easiest for you. You may need a third row if the message contains both uppercase and lowercase letters.</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row5">
+              <th>ASCII</th>
+            </tr>
+          </table>
+          <p>Next fill in the table with the values you do know. For this example, we will assume we are given A = 65 as a hint.</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row5">
+              <th>ASCII</th>
+            </tr>
+          </table>
+          <p>Now fill in the remaining cells of the table with the numbers next to it.</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>ASCII</th>
+            </tr>
+          </table>
+          <p>Use this table to substitute the numbers in your message with letters.</p>
+        </div>
+      </section>
+      <section id="decrypt2">
+        <button type="button" class="collapsible">How to Decrypt Your Message With ASCII Table</button>
+        <div class="content">
+          <p>Using the table below, look for your letter and then substitute it with the value below.</p>
+          <p>Example:</p>
+          <p>Encrypted Message: 84 104 101 / 113 117 105 99 107 / 98 114 111 119 110 / 102 111 120 / 106 117 109 112 115 / 111 118 101 114 / 116 104 101 / 108 97 122 121 / 100 111 103</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog</p>
+          <table>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>ASCII</th>
+            </tr>
+            <tr class="table-row3">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row4">
+              <th>ASCII</th>
+            </tr>
+          </table>
+          <img src="../images/ascii.png" alt="ASCII Table" style="background-color: white; height: auto; margin-bottom: 1rem; width: 50%;">
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below, select your encryption option, and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <div class="options">
+            <p>Encryption options:</p>
+            <input type="radio" id="mix" name="encrypt-option" value="mix" checked="checked">
+            <label for="encrypt-option">Allow both uppercase and lowercase ASCII values</label><br>
+            <input type="radio" id="only-upper" name="encrypt-option" value="only-upper">
+            <label for="encrypt-option">Use only uppercase ASCII values</label><br>
+            <input type="radio" id="only-lower" name="encrypt-option" value="only-lower">
+            <label for="encrypt-option">Use only lowercase ASCII values</label><br>
+          </div>
+          <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains number, spaces, and /. / will be used as a placeholder for spaces between wordss.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
