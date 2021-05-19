@@ -33,7 +33,7 @@ function encrypt() {
 
 function decrypt() {
   const inputText = document.getElementById('decrypt-text').value;
-  const stripText = inputText.toUpperCase().replace(/[^0-9 /]/g, '');
+  const stripText = inputText.replace(/[^0-9 /]/g, '');
   const numArray = stripText.split(' ');
   let decryptedMessage = '';
   for (let i = 0; i < numArray.length; ++i) {
