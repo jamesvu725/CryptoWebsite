@@ -20,3 +20,14 @@ function copy(id) {
   copyText.setSelectionRange(0, 99999);
   document.execCommand('copy');
 }
+
+window.onresize = resize;
+
+function resize() {
+  const con = document.getElementsByClassName('content');
+  for (let i = 0; i < con.length; ++i) {
+    if (con[i].style.maxHeight) {
+      con[i].style.maxHeight = con[i].scrollHeight + 'px';
+    }
+  }
+}
