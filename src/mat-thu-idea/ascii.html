@@ -152,12 +152,18 @@
           <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
           <div class="options">
             <p>Encryption options:</p>
-            <input type="radio" id="mix" name="encrypt-option" value="mix" checked="checked">
-            <label for="encrypt-option">Allow both uppercase and lowercase ASCII values</label><br>
-            <input type="radio" id="only-upper" name="encrypt-option" value="only-upper">
-            <label for="encrypt-option">Use only uppercase ASCII values</label><br>
-            <input type="radio" id="only-lower" name="encrypt-option" value="only-lower">
-            <label for="encrypt-option">Use only lowercase ASCII values</label><br>
+            <label>
+              <input type="radio" name="encrypt-option" value="mix" checked="checked">Allow both uppercase and lowercase ASCII values
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="encrypt-option" value="only-upper">Use only uppercase ASCII values
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="encrypt-option" value="only-lower">Use only lowercase ASCII values
+            </label>
+            <br>
           </div>
           <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
           <p>Your encrypted message will be outputted below.</p>
