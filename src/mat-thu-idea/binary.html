@@ -8,7 +8,8 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/binary.js" async defer></script>
     <title>Binary Code</title>
   </head>
   <body>
@@ -26,9 +27,117 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>Binary Code</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>Binary Code</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>Binary code is a code that uses two symbols to represent data. 0s and 1s are most commonly used. For this cryptogram, we can either start counting the alphabet at 1 or use the ASCII table values and start at 65 for A or 97 for a.</p>
+          <p>Example: A(1) = 00001 or A(65) = 01000001 or a(97) = 01100001</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>Easy to solve once you figure it out</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>Will be hard to figure out if you are not familiar with it</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Giving A = 00000001 is a good hint since it lets the solver know the starting point, starting in the middle will make it harder if it is the only hint</li>
+            <li>It is recommended to use binary code starting with 1 instead of 65 or 97 since most people are not familiar with ASCII code</li>
+            <li>The last 5 digits in ASCII is exactly the same as counting starting from 1, so you can actually ignore the first 3 digits.</li>
+          </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each letter in your message with the numbers in the cell beside it. Make sure to stick to a single column.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: GSV JFRXP YILDM ULC QFNKH LEVI GSV OZAB WLT</p>
+          <table class="table1">
+            <tr>
+              <th>Letter</th>
+              <th>From 1</th>
+              <th>Uppercase ASCII</th>
+              <th>Lowercase ASCII</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Using the table below, substitute each number in your message with the letter in the cell beside it.</p>
+          <p>Example:</p>
+          <p>Encrypted Message: GSV JFRXP YILDM ULC QFNKH LEVI GSV OZAB WLT.</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <table class="table1">
+            <tr>
+              <th>Letter</th>
+              <th>From 1</th>
+              <th>Uppercase ASCII</th>
+              <th>Lowercase ASCII</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below, select your encryption option, and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <div class="options">
+            <p>Encryption options:</p>
+            <label>
+              <input type="radio" name="encrypt-option" value="one" checked="checked">Start from 1
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="encrypt-option" value="only-upper">Use only uppercase ASCII
+            </label>
+            <br>
+            <label>
+            <input type="radio" name="encrypt-option" value="only-lower">Use only lowercase ASCII
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="encrypt-option" value="mix">Use both uppercase and lowercase ASCII
+            </label>
+            <br>
+          </div>
+          <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains 0, 1, spaces, and /. / will be treated as a space between words. Make sure the numbers are in 8 digit chunks.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
