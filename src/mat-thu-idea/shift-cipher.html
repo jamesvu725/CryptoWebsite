@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Contain tools to encrypt and decrypt certain cryptograms" />
+    <meta name="author" content="James Vu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/tntt.png" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/shift-cipher.js" async defer></script>
+    <title>Shift Cipher</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this website.</noscript>
+    <div class="navbar">
+      <div class="home">
+        <a href="../index.html">
+          <img src="../images/tntt.png" alt="tntt logo" style="float:left; width:2.5rem; height:2.5rem; margin-right:1rem">
+          THD M&#7853;t Th&#432;
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="../contact.html">Contact</a>
+        <a href="../future-plan.html">Future Plans</a>
+        <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
+      </div>
+    </div>
+    <main>
+      <header>
+        <h1>Shift Cipher</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>The shift cipher also known as the Caesar's cipher is a type of substitution cipher in which each letter of the message is replaced by a letter some fixed number of positions down the alphabet.</p>
+          <p>Example: With a shift of 3, A->D</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>Easy to solve once you figure it out</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>Will be hard to figure out if you are not familiar with it</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Give at least one hint showing the shift number or the key to a letter such as A = D</li>
+            <li>Giving the shift number makes it easier for the solver while giving a letter makes it harder to find the relationship</li>
+          </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>First, choose a shift number between 1 and 25. Count down the alphabet that many time. The letter you stop at is now the start of your shifted alphabet. Replace all the letters in your message using the shifted alphabet.</p>
+          <p>Example:</p>
+          <p>Shift number = 3. Three down the alphabet is D. D is the start of the shifted alphabet. The letter A in the original message is now D in the encrypted message. The letter B is now E and so forth.</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ</p>
+          <p>Input the shift number you want for your new alphabet. Please input an integer from 1 to 25.</p>
+          <input type="number" id="shift" name="shift" min="1" max="25" value="1" step="1">
+          <button onclick="shiftTable('shift')" class="tool-button">Submit</button>
+          <table >
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Shifted</th>
+            </tr>
+          </table><br>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>First, determine what your shift number is. If you are not given the shift number but have the relationship between two letters, convert both letters to numbers and subtract them. If the difference of the two number is negative, add 26 to the difference. Shift the alphabet backwards and replace all the letters in your message with the shifted alphabet. If the shift is wrong, try 26 minus your number instead.</p>
+          <p>Example:</p>
+          <p>You are given D = A as your hint. D = 4 and A = 1. The difference between the two numbers is 3. Your shift number is 3.</p>
+          <p>Encrypted Message: WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Input the shift number you want for your new alphabet. Please input an integer from 1 to 25.</p>
+          <input type="number" id="shift2" name="shift2" min="1" max="25" value="1" step="1">
+          <button onclick="shiftTable('shift2')" class="tool-button">Submit</button>
+          <table >
+            <tr class="table-row2">
+              <th>Shifted</th>
+            </tr>
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+          </table><br>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below, select your shift number, and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          Shift Number:
+          <input type="number" id="encrypt-shift" name="encrypt-shift" min="1" max="25" value="1" step="1">
+          <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains letters and spaces. Make sure to input the correct shift number.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          Shift Number:
+          <input type="number" id="decrypt-shift" name="decrypt-shift" min="1" max="25" value="1" step="1">
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
