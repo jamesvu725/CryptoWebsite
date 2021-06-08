@@ -8,7 +8,9 @@
     <link rel="icon" href="../images/tntt.png" />
     <link rel="stylesheet" href="../styles/header.css" />
     <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
-    <script src="../scripts/index.js"></script>
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/count-circle.js" async defer></script>
+    <script src="../scripts/header.js" async defer></script>
     <title>Count the Circles</title>
   </head>
   <body>
@@ -26,9 +28,158 @@
         <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
       </div>
     </div>
-    <div class="title">
-      <h1>Count the Circles</h1>
-    </div>
-    <h2>Work in Progress</h2>
+    <main>
+      <header>
+        <h1>Count the Circles</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>This is a simple cryptogram where you count the number of circles in each number and the number of circles corresponds to a letter.</p>
+          <p>Example:</p>
+          <p>The number 0 has 1 circle in it, so the letter is A.</p>
+          <p>The number 8 has 2 circles in it, so the letter is B.</p>
+        </div>
+      </section>
+      <section id="my-corner">
+        <button type="button" class="collapsible">James's Corner</button>
+        <div class="content">
+          <div class="pro-con">
+            <div class="col">
+              <p>Pros:</p>
+              <ul>
+                <li>Easy to solve once you figure it out</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Cons:</p>
+              <ul>
+                <li>May take time to count each line of circles</li>
+                <li>Not practical spacewise since each letter takes up a lot of space</li>
+              </ul>
+            </div>
+          </div>
+          <p style="margin: 0;">About Giving Hints:</p>
+          <ul>
+            <li>Give at least one hint showing a number and its letter counterpart. Example: 0689 = E</li>
+            <li>If they are stuck, tell them to not overthink it</li>
+            <li>If they are really stuck, tell them counting is essential</li>
+          </ul>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Use the <a href="letter-to-number.html" target="_blank">Letter to Number</a> tool to find how many circles you need for each letter. Create your message by adding numbers to reach your circle number. Note: 4 does not have a circle since the number 4 can be written with or without the hole.</p>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message:<br>
+            8088980009888 8720662663673 0758181557424 5474177141711 6988886888242 8088686089888 8614809790342 9781457431542 8888440902525 3717431317573 6297531455522 6680689889881 0996808866994 6898688888888 9688888721821 4537547447475 8189252411023 0969888638926 8808088888888 2125512171111 0048388046417 8889098890888 8626808801077 8806869880673 8899900888098 5151345374725 9989886997096 6808098888888 2863823772411 9098889098089 5231357352577 6898860800888 8862825631573 5658843744352 1421745233174 8886828707734 0222425211247 8888888888888 6888888888888 4431717421547 0326835214137 6868896583894 0009732541816</p>
+          <table >
+            <tr>
+              <th>Number</th>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th>Circles</th>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+            </tr>
+          </table>
+          <table >
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Number</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Count the number of circles in each number. Use the table below to see how many circles are in each number. Use the table below to convert the number of circles to letters.</p>
+          <p>Example:</p>
+          <p>Encrypted Message:<br>8088980009888 8720662663673 0758181557424 5474177141711 6988886888242 8088686089888 8614809790342 9781457431542 8888440902525 3717431317573 6297531455522 6680689889881 0996808866994 6898688888888 9688888721821 4537547447475 8189252411023 0969888638926 8808088888888 2125512171111 0048388046417 8889098890888 8626808801077 8806869880673 8899900888098 5151345374725 9989886997096 6808098888888 2863823772411 9098889098089 5231357352577 6898860800888 8862825631573 5658843744352 1421745233174 8886828707734 0222425211247 8888888888888 6888888888888 4431717421547 0326835214137 6868896583894 0009732541816 </p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog.</p>
+          <table >
+            <tr>
+              <th>Number</th>
+              <td>0</td>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+              <td>5</td>
+              <td>6</td>
+              <td>7</td>
+              <td>8</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th>Circles</th>
+              <td>1</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>1</td>
+              <td>0</td>
+              <td>2</td>
+              <td>1</td>
+            </tr>
+          </table>
+          <table >
+            <tr class="table-row1">
+              <th>Letter</th>
+            </tr>
+            <tr class="table-row2">
+              <th>Number</th>
+            </tr>
+          </table>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below and click Submit. Please make sure the message only contains letters and spaces. Numbers and punctuation will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains numbers and spaces.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
