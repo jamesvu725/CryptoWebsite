@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Contain tools to encrypt and decrypt certain cryptograms" />
+    <meta name="author" content="James Vu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/tntt.png" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/mat-thu-idea.css" />
+    <script src="../scripts/mat-thu-idea.js" async defer></script>
+    <script src="../scripts/five-by-five-grid.js" async defer></script>
+    <script src="../scripts/header.js" async defer></script>
+    <title>5x5 Grid</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this website.</noscript>
+    <div class="navbar">
+      <div class="home">
+        <a href="../index.html">
+          <img src="../images/tntt.png" alt="tntt logo" style="float:left; width:2.5rem; height:2.5rem; margin-right:1rem">
+          THD M&#7853;t Th&#432;
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="../contact.html">Contact</a>
+        <a href="../future-plan.html">Future Plans</a>
+        <a href="../list-of-mat-thu-ideas.html">List of M&#7853;t Th&#432; Ideas</a>
+      </div>
+    </div>
+    <main>
+      <header>
+        <h1>5x5 Grid</h1>
+      </header>
+      <section id="description">
+        <button type="button" class="collapsible">Description</button>
+        <div class="content">
+          <p>Substitute each letter in the message using the numbers it corresponds to in a 5x5 grid. You read the coordinates by row then column. Y and Z shares the same square.</p>
+          <table class="alphabet-five-by-five" style="float: left; margin-left:25%;"></table>
+          <table class="number-five-by-five"></table>
+          <p>Example:</p>
+          <p>Grid = 22 43 24 14</p>
+        </div>
+      </section>
+      <section id="encrypt">
+        <button type="button" class="collapsible">How to Encrypt Your Message</button>
+        <div class="content">
+          <p>Substitute each letter in your message with the corresponding number using the table below.</p>
+          <table class="alphabet-five-by-five" style="float: left; margin-left:25%;"></table>
+          <table class="number-five-by-five"></table>
+          <p>Example:</p>
+          <p>Original Message: The quick brown fox jumps over the lazy dog.</p>
+          <p>Encrypted Message: 45 23 15 / 42 51 24 13 31 / 12 43 35 53 34 / 21 35 54 / 25 51 33 41 44 / 35 52 15 43 / 45 23 15 / 32 11 55 55 / 14 35 22 </p>
+        </div>
+      </section>
+      <section id="decrypt">
+        <button type="button" class="collapsible">How to Decrypt Your Message</button>
+        <div class="content">
+          <p>Substitute each number in your message with the corresponding letter using the table below.</p>
+          <table class="alphabet-five-by-five" style="float: left; margin-left:25%;"></table>
+          <table class="number-five-by-five"></table>
+          <p>Example:</p>
+          <p>Encrypted Message: 45 23 15 / 42 51 24 13 31 / 12 43 35 53 34 / 21 35 54 / 25 51 33 41 44 / 35 52 15 43 / 45 23 15 / 32 11 55 55 / 14 35 22</p>
+          <p>Decrypted Message: The quick brown fox jumps over the lazy dog</p>
+        </div>
+      </section>
+      <section id="encrypt-tool">
+        <button type="button" class="collapsible">Encryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to encrypt below and click Submit. Please make sure the message only contains letters and spaces. Numbers, punctuation and special characters will be ignored.</p>
+          <textarea id="encrypt-text" placeholder="Write your message here."></textarea>
+          <button onclick="encrypt()" class="tool-button" style="margin:0;">Submit</button>
+          <p>Your encrypted message will be outputted below.</p>
+          <textarea readonly id="encrypt-text-output"></textarea>
+          <button onclick="copy('encrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+      <section id="decrypt-tool">
+        <button type="button" class="collapsible">Decryption Tool</button>
+        <div class="content">
+          <p>Input the message you want to decrypt below and click Submit. Please make sure the message only contains numbers, spaces, and /. / will be used as a break between words.</p>
+          <textarea id="decrypt-text" placeholder="Write your encrypted message here."></textarea>
+          <button onclick="decrypt()" class="tool-button">Submit</button>
+          <p>Your decrypted message will be outputted below.</p>
+          <textarea readonly id="decrypt-text-output"></textarea>
+          <button onclick="copy('decrypt-text-output')" class="tool-button">Copy Text to Clipboard</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
